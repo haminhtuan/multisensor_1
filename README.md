@@ -39,35 +39,7 @@ Trải dây vào đươi vị trí hay nằm để cảm biến được lực
 - Nạp ESP cho Hass: Cái này trên mạng nhiều, các bác google để tìm hiểu và cài
 - Kết nối esphome cho chip ESP: cắm dây cáp usb giữa máy tính và esp và chọn New Device trong tab ESPHome, và làm theo hướng dẫn của máy
 ![image](https://github.com/haminhtuan/multisensor_1/assets/39614020/bb05229d-b2b8-4ca8-9236-90cb65f3ed95)
-- Thêm code sau trong device đã có các thiết lập cơ bản esphome
-
-sensor:
-  - platform: adc
-    pin: GPIO39
-    attenuation: 11db
-    name: "Master Bed Sensor"
-    id: "master_bed_sensor"
-    icon: mdi:bed
-    update_interval: 0.5s
-    filters:
-      - sliding_window_moving_average:
-          window_size: 10
-          send_every: 1
-      - or:
-          - throttle: 180s
-          - delta: 0.02
-
-
-binary_sensor:
-  - platform: template
-    name: "Master Bed Occupied"
-    id: mb_o
-    lambda: |-
-      if (id(master_bed_sensor).state < id(trigger_level).state) {
-        return true;
-      } else {
-        return false;
-      }
+- Thêm code tại file Esphome code trong device đã có các thiết lập cơ bản esphome
 
 4. Bước 4:
 - Cắm chip esp vào board,
