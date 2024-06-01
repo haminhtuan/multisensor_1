@@ -11,7 +11,7 @@ binary_sensor:
 
 sensor:
   - platform: adc
-    pin: GPIO34
+    pin: GPIO39
     attenuation: 11db
     name: "Master Bed Sensor"
     id: "master_bed_sensor"
