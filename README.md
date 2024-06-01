@@ -9,10 +9,10 @@ hoặc
 - Nguồn DC 5v ( cung cấp kèm board hoặc mua thêm tuỳ bộ kit)
 - Chip ESP 32 D1 mini ( mua thêm)
 - Dây cảm biến lực FSR600 (mua thêm) tối đa 2 dây
-- Dây led 2812b:  không quá 3m (phải thay nguồn 5v 4a)
-- Cảm biến CO2 SCD40/41
-- Cảm biến ánh sáng BH1750
-- Cảm biến chuyển động LD2410c hoặc 2420 ( cần chỉnh jumper để set điện thế cấp)
+- Dây led 2812b(mua thêm) : không quá 3m (phải thay nguồn 5v 4a)
+- Cảm biến CO2 SCD40/41: mua thêm
+- Cảm biến ánh sáng BH1750: mua thêm
+- Cảm biến chuyển động LD2410c hoặc 2420 ( cần chỉnh jumper để set điện thế cấp): mua thêm
 
 1. Bước 1: Hàn linh kiện vào board
 
