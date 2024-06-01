@@ -29,16 +29,45 @@ Nếu chỉ dùng cảm biến giường thì chỉ cần hàn chân ESP, chân 
 2. Bước 2: Trải dây FSR đưới giường
 Trải dây vào đươi vị trí hay nằm để cảm biến được lực
 
-![image](https://github.com/haminhtuan/multisensor_1/assets/39614020/93490689-a8a5-4b4e-b4fb-b24e96e47b07)
+![(https://github.com/haminhtuan/multisensor_1/assets/39614020/93490689-a8a5-4b4e-b4fb-b24e96e47b07)
 
 ![image](https://github.com/haminhtuan/multisensor_1/assets/39614020/b11c2e57-725e-41ef-a3e5-aaeaea724490)
 
 
 3. Bước 3 Nạp code Esphome cho esp32 d1 mini
 
+- Nạp ESO cho Hass: Cái này trên mạng nhiều, các bác google để tìm hiểu và cài
+- Kết nối esphome cho chip ESP: cắm dây cáp usb giữa máy tính và esp và chọn New Device trong tab ESPHome, và làm theo hướng dẫn của máy
+![image](https://github.com/haminhtuan/multisensor_1/assets/39614020/bb05229d-b2b8-4ca8-9236-90cb65f3ed95)
+- Thêm code sau trong device đã có các thiết lập cơ bản esphome
+
+sensor:
+  - platform: adc
+    pin: GPIO39
+    attenuation: 11db
+    name: "Master Bed Sensor"
+    id: "master_bed_sensor"
+    icon: mdi:bed
+    update_interval: 0.5s
+    filters:
+      - sliding_window_moving_average:
+          window_size: 10
+          send_every: 1
+      - or:
+          - throttle: 180s
+          - delta: 0.02
 
 
-
+binary_sensor:
+  - platform: template
+    name: "Master Bed Occupied"
+    id: mb_o
+    lambda: |-
+      if (id(master_bed_sensor).state < id(trigger_level).state) {
+        return true;
+      } else {
+        return false;
+      }
 
 4. Bước 4:
 - Cắm chip esp vào board,
