@@ -27,7 +27,8 @@ Nếu chỉ dùng cảm biến giường thì chỉ cần hàn chân ESP, chân 
 
 
 2. Bước 2: Trải dây FSR đưới giường
-Trải dây vào đươi vị trí hay nằm để cảm biến được lực
+   
+Trải dây vào dưới vị trí hay nằm để cảm biến được lực tốt hơn
 
 ![(https://github.com/haminhtuan/multisensor_1/assets/39614020/93490689-a8a5-4b4e-b4fb-b24e96e47b07)
 
