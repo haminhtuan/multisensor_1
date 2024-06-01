@@ -36,7 +36,7 @@ Trải dây vào đươi vị trí hay nằm để cảm biến được lực
 
 3. Bước 3 Nạp code Esphome cho esp32 d1 mini
 
-- Nạp ESO cho Hass: Cái này trên mạng nhiều, các bác google để tìm hiểu và cài
+- Nạp ESP cho Hass: Cái này trên mạng nhiều, các bác google để tìm hiểu và cài
 - Kết nối esphome cho chip ESP: cắm dây cáp usb giữa máy tính và esp và chọn New Device trong tab ESPHome, và làm theo hướng dẫn của máy
 ![image](https://github.com/haminhtuan/multisensor_1/assets/39614020/bb05229d-b2b8-4ca8-9236-90cb65f3ed95)
 - Thêm code sau trong device đã có các thiết lập cơ bản esphome
